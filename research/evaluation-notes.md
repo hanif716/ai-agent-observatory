@@ -229,14 +229,5 @@ Best for reasoning vs. extraction tasks
 
 This allows organisations to make informed decisions when selecting AI tools.
 
-🏆 9. Why This Matters for Global Talent Visa
 
-This is high-value technical evidence because:
-
-✔ It demonstrates advanced AI evaluation understanding
-✔ Shows strong independent research capability
-✔ Demonstrates you can design reliable AI systems
-✔ Clearly displays technical contribution (OC3)
-✔ Framework-level innovation (OC1)
-✔ You’re producing open-source benchmarking tools (assessors love this)
 
