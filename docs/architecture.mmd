@@ -1,0 +1,52 @@
+flowchart LR
+    subgraph UserSide["User Side"]
+        U["User or Admin"]
+        FE["React Dashboard - Charts and Controls"]
+    end
+
+    subgraph Backend["Backend API - FastAPI or Node"]
+        API["REST API Layer"]
+        TASKDEF["Task Definition Service"]
+        RUNNER["Evaluation Runner"]
+        EVAL["Evaluation Engine - Scoring and Metrics"]
+        AGG["Results Aggregator"]
+        LOG["Run Logs and Errors"]
+    end
+
+    subgraph Agents["Agent Framework Integrations"]
+        CREW["CrewAI Agent"]
+        AUTOGEN["AutoGen Agent"]
+        LANGGRAPH["LangGraph Flow"]
+        CUSTOM["Custom Agent Implementation"]
+    end
+
+    subgraph Data["Storage and Metrics"]
+        CASES["Test Case Store"]
+        METRICS["Metrics Database"]
+        RAWOUT["Raw Agent Outputs"]
+    end
+
+    U --> FE
+    FE --> API
+    API --> TASKDEF
+    TASKDEF --> CASES
+
+    API --> RUNNER
+    RUNNER --> CREW
+    RUNNER --> AUTOGEN
+    RUNNER --> LANGGRAPH
+    RUNNER --> CUSTOM
+
+    CREW --> RAWOUT
+    AUTOGEN --> RAWOUT
+    LANGGRAPH --> RAWOUT
+    CUSTOM --> RAWOUT
+
+    RAWOUT --> EVAL
+    CASES --> EVAL
+    EVAL --> METRICS
+    EVAL --> LOG
+
+    METRICS --> AGG
+    LOG --> AGG
+    AGG --> FE
