@@ -240,4 +240,3 @@ This is high-value technical evidence because:
 ✔ Framework-level innovation (OC1)
 ✔ You’re producing open-source benchmarking tools (assessors love this)
 
-This ties directly into your profile as a technical innovator.
