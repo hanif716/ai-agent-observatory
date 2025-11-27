@@ -150,16 +150,6 @@ Additional setup instructions will be added during early development.
 - [ ] Leaderboard  
 
 ---
-
-## 💡 Why This Project Matters (For Assessors)
-This project demonstrates:
-
-- **Innovation**: evaluating autonomous AI agents  
-- **Technical depth**: building scoring, metrics, hallucination detection  
-- **Advanced engineering**: multi-framework evaluation  
-- **Research capability**: designing test datasets + metrics  
-- **Public value**: knowledge for the wider AI ecosystem  
-
 Supports:
 - **Mandatory Criterion (Innovation)**  
 - **Optional Criterion (Technical Contribution)**  
