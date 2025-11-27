@@ -1,148 +1,129 @@
-1. Purpose of the AI Agent Observatory
+# AI Agent Evaluation – Technical Research Notes
+**Project:** AI Agent Observatory  
+**Author:** Hanif Hazrati  
+
+---
+
+## 1. Purpose of the AI Agent Observatory
 
 AI agents behave differently depending on:
 
-their underlying frameworks
+- their underlying frameworks  
+- their prompting style  
+- their memory and state management  
+- their tool access  
+- the type of task assigned  
 
-their prompting style
+Most AI agent frameworks **do not have a standard standardised evaluation method**.
 
-their memory and state management
+The Observatory provides:
 
-their tool access
+- ✔ Performance benchmarking  
+- ✔ Accuracy measurement  
+- ✔ Hallucination detection  
+- ✔ Cost efficiency analysis  
+- ✔ Task reliability scoring  
+- ✔ Reproducible evaluation datasets  
 
-the type of task assigned
+This elevates the project into **AI research**, strengthening UK Global Talent evidence.
 
-Most AI agent frameworks do not have a standard way to evaluate or compare performance.
+---
 
-The purpose of the Observatory is to:
+## 2. Key Agent Frameworks Being Evaluated
 
-✔ Benchmark agent performance
+We evaluate:
 
-✔ Measure accuracy
+- CrewAI  
+- AutoGen  
+- LangGraph (LangChain)  
+- Custom Agent Implementations  
 
-✔ Detect hallucinations
+### Architecture Comparison
 
-✔ Evaluate cost efficiency
+| Framework | Type                        | Notes                       |
+|----------|------------------------------|-----------------------------|
+| CrewAI   | Role-based multi-agent       | Strong for workflows        |
+| AutoGen  | Conversational multi-agent   | Flexible & coordination-based|
+| LangGraph| Directed graph + memory      | State-aware & deterministic |
+| Custom   | User-defined agents          | Full flexibility            |
 
-✔ Score task completion reliability
+---
 
-✔ Produce reproducible evaluation datasets
+## 3. Types of Tasks Tested
 
-This elevates the project into AI research, which strengthens a UK Global Talent application.
+### Extraction Tasks
+- JSON extraction  
+- Key-value pairs  
+- Contract clause extraction  
 
-2. Key Agent Frameworks Being Evaluated
+### Summarisation Tasks
+- Long-document summaries  
+- Multi-source synthesis  
 
-We compare:
+### Search Tasks
+- Supplier discovery  
+- Web queries  
 
-CrewAI
+### Reasoning Tasks
+- Multi-step decision making  
+- Chain-of-thought reasoning  
 
-AutoGen
+### Evaluation Tasks
+- Fact checking  
+- Consistency detection  
 
-LangGraph (LangChain)
+---
 
-Custom Agent Implementations
+## 4. Evaluation Metrics
 
-Architecture Comparison
-Framework	Type	Notes
-CrewAI	Role-based multi-agent	Strong for workflows
-AutoGen	Conversational multi-agent	Very flexible
-LangGraph	Directed graph + memory	Excellent control & state
-Custom	User-defined agents	Maximum customization
-3. Types of Tasks Tested
-Extraction Tasks
-
-Key-value extraction
-
-Structured JSON extraction
-
-Clause extraction (used in Contract Intelligence Engine)
-
-Summarisation Tasks
-
-Long text summaries
-
-Multi-document summaries
-
-Technical synthesis
-
-Search Tasks
-
-Supplier research
-
-Web lookups
-
-Reasoning Tasks
-
-Chain-of-thought
-
-Multi-step logic
-
-Decision-making
-
-Evaluation Tasks
-
-Fact checking
-
-Detecting inconsistencies
-
-4. Evaluation Metrics
-4.1 Accuracy Score (0–100)
+### 4.1 Accuracy Score (0–100)
 
 Measured using:
+- semantic similarity  
+- ground truth matching  
 
-semantic similarity
+### 4.2 Hallucination Rate (%)
 
-ground truth match
+**Formula:**
 
-4.2 Hallucination Rate (%)
-
-Formula:
-
+<div style="font-family: monospace; padding: 6px; background: #f6f8fa; border-radius: 6px;">
 Hallucination Rate = Incorrect Claims / Total Claims
+</div>
 
+Detected by:
+- contradiction analysis  
+- mismatched facts  
+- ungrounded statements  
 
-Detected via:
+### 4.3 Task Success Rate (%)
 
-contradictions
+Checks if the agent:
+- followed instructions  
+- returned valid JSON  
+- completed the workflow  
 
-false statements
-
-ungrounded assertions
-
-4.3 Task Success Rate (%)
-
-Checks whether the agent:
-
-returns valid JSON
-
-follows instructions
-
-completes the assigned workflow
-
-4.4 Cost per Run (Token Efficiency)
+### 4.4 Cost per Run
 
 Tracks:
+- prompt tokens  
+- completion tokens  
+- total cost per evaluation  
 
-prompt tokens
+### 4.5 Latency
 
-completion tokens
+Measures:
+- execution time  
+- average latency  
+- time distribution  
 
-total cost
+---
 
-4.5 Response Time (Latency)
+## 5. Dataset and Ground Truth Design
 
-Measured as:
+A **Task Case Store** entry:
 
-per-task runtime
-
-average latency
-
-distribution across runs
-
-5. Dataset and Ground Truth Design
-
-A Task Case Store defines each evaluation case:
-
+<div style="background:#f6f8fa; padding:10px; border-radius:8px;">
+<pre>
 {
   "input": "...",
   "expected_output": "...",
@@ -150,14 +131,19 @@ A Task Case Store defines each evaluation case:
   "task_type": "extraction/summarisation/reasoning",
   "evaluation_method": "exact/semantic"
 }
+</pre>
+</div>
 
+This ensures **consistent and reproducible results** across agent frameworks.
 
-This ensures reproducibility and consistent evaluation across all agent frameworks.
+---
 
-6. Evaluation Engine – Scoring Mechanism
+## 6. Evaluation Engine — Scoring Mechanism
 
 Example scoring logic:
 
+<div style="background:#f6f8fa; padding:10px; border-radius:8px;">
+<pre>
 def evaluate_agent_output(output, ground_truth):
     accuracy = semantic_similarity(output, ground_truth)
     hallucination = detect_hallucination(output, ground_truth)
@@ -172,39 +158,34 @@ def evaluate_agent_output(output, ground_truth):
         "cost": cost,
         "latency": latency
     }
+</pre>
+</div>
 
-7. Dashboard Visualisation
+---
 
-The planned dashboard will include:
+## 7. Dashboard Visualisation
 
-Accuracy trend lines
+Planned UI includes:
 
-Radar charts for multi-agent comparison
+- Accuracy over time  
+- Radar charts  
+- Hallucination scatter plots  
+- Cost vs accuracy  
+- Leaderboards  
+- Latency distribution charts  
 
-Hallucination scatter plots
+---
 
-Cost vs accuracy graphs
+## 8. Insights Provided
 
-Leaderboards
+The Observatory reveals:
 
-Latency distributions
+- Best-performing agents  
+- Most reliable JSON extractors  
+- Fastest agents  
+- Most cost-efficient frameworks  
+- Best reasoning vs extraction models  
 
-These visualisations help interpret performance intuitively.
+This helps organisations choose the right AI agent framework.
 
-8. Insights Provided
-
-The Observatory helps identify which agents are:
-
-Most accurate
-
-Least hallucination-prone
-
-Fastest
-
-Most cost-efficient
-
-Best for structured extraction
-
-Best for reasoning tasks
-
-These insights support organisational decisions about which AI agent frameworks to adopt.
+---
