@@ -150,11 +150,6 @@ Additional setup instructions will be added during early development.
 - [ ] Leaderboard  
 
 ---
-Supports:
-- **Mandatory Criterion (Innovation)**  
-- **Optional Criterion (Technical Contribution)**  
-
----
 
 ## 📜 License
 MIT License.
