@@ -25,7 +25,7 @@ The purpose of the Observatory is to:
 - ✔ Score task completion reliability  
 - ✔ Produce reproducible evaluation datasets  
 
-This turns the project into **AI research**, making it strong evidence for UK Global Talent.
+This turns the project into **AI research**, which is strong evidence for UK Global Talent.
 
 ---
 
@@ -47,8 +47,6 @@ We compare performance across:
 | LangGraph| Directed graph + memory      | Powerful for graph control  |
 | Custom   | User-built agents            | Maximum flexibility         |
 
-Studying their behaviour gives deep insight into agent architecture trade-offs.
-
 ---
 
 ## 3. Types of Tasks Tested
@@ -56,16 +54,15 @@ Studying their behaviour gives deep insight into agent architecture trade-offs.
 ### **Extraction Tasks**
 - Extract key-value pairs  
 - Extract structured JSON  
-- Extract clauses (used in Contract Intelligence Engine)  
+- Extract clauses (Project 2)  
 
 ### **Summarisation Tasks**
-- Summaries of long text  
+- Highlights  
+- Long text summaries  
 - Multi-document summaries  
-- Technical abstraction  
 
 ### **Search Tasks**
-- Supplier research  
-- Evidence gathering  
+- Supplier discovery  
 - Web lookups  
 
 ### **Reasoning Tasks**
@@ -76,50 +73,38 @@ Studying their behaviour gives deep insight into agent architecture trade-offs.
 ### **Evaluation Tasks**
 - Fact checking  
 - Detect inconsistencies  
-- Compare statements  
-
-Each task includes a **ground truth** for reliable scoring.
 
 ---
 
 ## 4. Evaluation Metrics
 
-The Observatory measures five key metrics.
-
----
-
 ### **4.1 Accuracy Score (0–100)**  
-How correct the output is.
-
-Methods include:
+Measures correctness using:
 - ground truth comparison  
 - semantic similarity  
-- exact vs fuzzy match scoring  
 
 ---
 
 ### **4.2 Hallucination Rate (%)**
 
-Hallucinations = incorrect or fabricated statements.
-
-Detection uses:
-- contradiction checks  
-- fact mismatches  
-- ungrounded claims  
-
 Formula:
+
 Hallucination Rate = Incorrect Claims / Total Claims
+
+Detected using:
+- contradictions  
+- fact mismatches  
+- ungrounded statements  
 
 ---
 
 ### **4.3 Task Success Rate (%)**
 
-Checks if the agent completed the task correctly.
+Checks if the task was completed correctly:
 
-Examples:
-- returned valid JSON  
-- followed instructions  
-- completed workflow steps  
+- valid JSON returned  
+- instructions followed  
+- workflow completed  
 
 ---
 
@@ -130,16 +115,14 @@ Tracks:
 - completion tokens  
 - total cost per task  
 
-Some agents are accurate but too expensive.
-
 ---
 
 ### **4.5 Response Time (Latency)**
 
-Measures speed:
-- per task latency  
-- average latency  
-- distribution over repeated runs  
+Measures:  
+- time per task  
+- averages  
+- distribution  
 
 ---
 
@@ -156,6 +139,7 @@ A **Task Case Store** defines each evaluation case:
   "evaluation_method": "exact/semantic"
 }
 This ensures reproducible, comparable results across all agent frameworks.
+
 6. Evaluation Engine – Scoring Mechanism
 Example scoring logic:
 def evaluate_agent_output(output, ground_truth):
@@ -172,27 +156,25 @@ def evaluate_agent_output(output, ground_truth):
         "cost": cost,
         "latency": latency
     }
+
 7. Dashboard Visualisation
 
-The planned React dashboard will show:
+The planned dashboard will include:
 
 Accuracy trends
 
-Radar charts comparing multiple agents
+Radar charts
 
 Hallucination scatter plots
 
 Cost vs performance charts
 
-Task success heatmaps
-
 Leaderboards
 
-This makes evaluation results easy to interpret.
 
 8. Insights Provided
 
-The Observatory identifies which agents are:
+The Observatory identifies agents that are:
 
 Most accurate
 
@@ -202,8 +184,8 @@ Fastest
 
 Most cost-efficient
 
-Most reliable for structured tasks
+Best for structured extraction
 
-Best for reasoning vs extraction
+Best for reasoning
 
-These insights help organisations choose the right agent framework and model.
+These insights help organisations select the right agent framework.
