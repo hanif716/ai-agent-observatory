@@ -1,0 +1,7 @@
+{
+  "input": "If Supplier A is cheaper than Supplier B, which is the better option?",
+  "expected_output": "Supplier A",
+  "ground_truth": "Supplier A",
+  "task_type": "reasoning",
+  "evaluation_method": "semantic"
+}

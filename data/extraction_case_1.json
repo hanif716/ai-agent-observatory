@@ -1,0 +1,7 @@
+{
+  "input": "Supplier A provides cleaning services at £20/hour.",
+  "expected_output": {"service": "cleaning", "cost": "20/hour"},
+  "ground_truth": {"service": "cleaning", "cost": "20/hour"},
+  "task_type": "extraction",
+  "evaluation_method": "exact"
+}
